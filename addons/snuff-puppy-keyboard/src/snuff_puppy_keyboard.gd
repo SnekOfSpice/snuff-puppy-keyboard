@@ -94,6 +94,8 @@ const _KEYS_CMD_NUM := [
 ]
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	set_can_input(can_input_on_ready)
 
 func _process(delta: float) -> void:

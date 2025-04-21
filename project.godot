@@ -13,6 +13,7 @@ config_version=5
 config/name="Snuff Puppy Keyboard"
 run/main_scene="uid://bh8ru47gffirw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="uid://dboccudwdytf2"
 
 [editor_plugins]
 
