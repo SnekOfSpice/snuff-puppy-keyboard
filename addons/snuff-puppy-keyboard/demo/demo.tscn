@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh8ru47gffirw"]
+
+[ext_resource type="Theme" uid="uid://cyl5m10i3k23p" path="res://addons/snuff-puppy-keyboard/demo/demo_theme.tres" id="1_88nlt"]
+[ext_resource type="Script" uid="uid://b2xty1kkarded" path="res://addons/snuff-puppy-keyboard/src/snuff_puppy_keyboard.gd" id="1_kqoc7"]
+[ext_resource type="Script" uid="uid://cwd8nyn3ema4d" path="res://addons/snuff-puppy-keyboard/demo/demo.gd" id="1_mnewn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88nlt"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+
+[node name="Demo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_88nlt")
+script = ExtResource("1_mnewn")
+
+[node name="SnuffPuppyKeyboardManager" type="Node" parent="." node_paths=PackedStringArray("command_line", "input_prompt")]
+script = ExtResource("1_kqoc7")
+command_line = NodePath("../MarginContainer2/VBoxContainer/MarginContainer/HBoxContainer/RichTextLabel")
+input_prompt = NodePath("../MarginContainer2/VBoxContainer/MarginContainer/HBoxContainer/Label")
+metadata/_custom_type_script = "uid://b2xty1kkarded"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_88nlt")
+bbcode_enabled = true
+text = "[font_size=44]>///<[/font_size]
+you found the Snuff Puppy Keyboard demo!
+
+try any of the following commands to see how the keyboard works:
+  [color=#eddc7e]ABOUT[/color]
+    [color=#f16af2]LOVE[/color]
+      [color=#b9aabf]QUIT[/color]
+
+Enter to submit commands.
+Backspace to snuff your mistakes.
+
+[font_size=18][tornado radius=4.0 freq=1.0 connected=1]keyboard makes you feel like you have stupid bappy paws :3[/tornado][/font_size]"
+
+[node name="MarginContainer" type="PanelContainer" parent="MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "<3"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+
+[connection signal="command_submitted" from="SnuffPuppyKeyboardManager" to="." method="_on_snuff_puppy_keyboard_manager_command_submitted"]
+[connection signal="lines_shown" from="SnuffPuppyKeyboardManager" to="." method="_on_snuff_puppy_keyboard_manager_lines_shown"]

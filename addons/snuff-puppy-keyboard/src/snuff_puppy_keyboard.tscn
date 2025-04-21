@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vciqpor0stv1"]
+
+[ext_resource type="Script" uid="uid://b2xty1kkarded" path="res://addons/snuff-puppy-keyboard/src/snuff_puppy_keyboard.gd" id="1_n5le7"]
+
+[node name="SnuffPuppyKeyboard" type="Node"]
+script = ExtResource("1_n5le7")

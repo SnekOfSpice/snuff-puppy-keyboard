@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cyl5m10i3k23p"]
+
+[ext_resource type="FontFile" uid="uid://dbs2bsdhta5u5" path="res://addons/snuff-puppy-keyboard/visuals/VCR_OSD_MONO_1.001.ttf" id="1_4cua5"]
+
+[resource]
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_4cua5")
+RichTextLabel/constants/line_separation = 2
+RichTextLabel/font_sizes/normal_font_size = 30
+RichTextLabel/fonts/normal_font = ExtResource("1_4cua5")
